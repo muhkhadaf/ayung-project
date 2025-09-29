@@ -25,18 +25,18 @@ const Hero = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
-          <div className="text-center lg:text-left">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+          <div className="text-center lg:text-left" data-aos="fade-right" data-aos-delay="100">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight" data-aos="fade-up" data-aos-delay="200">
               Wujudkan Visi Kreatif Anda dengan{' '}
               <span className="text-[#11808b]">Desain Profesional</span>
             </h1>
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+            <p className="text-xl text-gray-600 mb-8 leading-relaxed" data-aos="fade-up" data-aos-delay="300">
               Ayung Project hadir sebagai partner terpercaya untuk semua kebutuhan desain grafis Anda. 
               Dari logo hingga branding lengkap, kami menciptakan identitas visual yang memukau dan berkesan.
             </p>
             
             {/* Key Points */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-8 text-left">
+            <div className="flex flex-col sm:flex-row gap-4 mb-8 text-left" data-aos="fade-up" data-aos-delay="400">
               <div className="flex items-center">
                 <div className="w-2 h-2 bg-[#11808b] rounded-full mr-3"></div>
                 <span className="text-gray-700 font-medium">Desain Berkualitas Tinggi</span>
@@ -52,7 +52,7 @@ const Hero = () => {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start" data-aos="fade-up" data-aos-delay="500">
               <Link
                 href="#layanan"
                 className="bg-[#11808b] text-white px-8 py-4 rounded-lg hover:bg-[#0f6b75] transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
@@ -69,8 +69,8 @@ const Hero = () => {
           </div>
 
           {/* Visual Element */}
-          <div className="relative">
-            <div className="relative z-10 bg-white rounded-2xl shadow-2xl p-8 transform rotate-3 hover:rotate-0 transition-transform duration-500">
+          <div className="relative" data-aos="fade-left" data-aos-delay="200">
+            <div className="relative z-10 bg-white rounded-2xl shadow-2xl p-8 transform rotate-3 hover:rotate-0 transition-transform duration-500" data-aos="zoom-in" data-aos-delay="400">
               <DotLottieReact
                 src="https://lottie.host/a7273477-d8bb-46ad-814e-0c84d9f00fa0/NIbGP1CpE7.lottie"
                 loop
@@ -81,18 +81,18 @@ const Hero = () => {
             </div>
             
             {/* Floating Elements */}
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#11808b] rounded-full opacity-20 animate-pulse"></div>
-            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-[#11808b] to-[#0f6b75] rounded-full opacity-10 animate-bounce"></div>
+            <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#11808b] rounded-full opacity-20 animate-pulse" data-aos="fade-in" data-aos-delay="600"></div>
+            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-[#11808b] to-[#0f6b75] rounded-full opacity-10 animate-bounce" data-aos="fade-in" data-aos-delay="700"></div>
             
             {/* Stats Cards */}
-            <div className="absolute -bottom-8 left-8 bg-white rounded-lg shadow-lg p-4 transform -rotate-6 z-20">
+            <div className="absolute -bottom-8 left-8 bg-white rounded-lg shadow-lg p-4 transform -rotate-6 z-20" data-aos="flip-left" data-aos-delay="800">
               <div className="text-center">
                 <div className="text-2xl font-bold text-[#11808b]">500+</div>
                 <div className="text-sm text-gray-600">Proyek Selesai</div>
               </div>
             </div>
             
-            <div className="absolute -top-8 right-8 bg-white rounded-lg shadow-lg p-4 transform rotate-12 z-20">
+            <div className="absolute -top-8 right-8 bg-white rounded-lg shadow-lg p-4 transform rotate-12 z-20" data-aos="flip-right" data-aos-delay="900">
               <div className="text-center">
                 <div className="text-2xl font-bold text-[#11808b]">98%</div>
                 <div className="text-sm text-gray-600">Kepuasan Klien</div>

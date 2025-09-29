@@ -42,13 +42,13 @@ const Header = () => {
               Tentang
             </Link>
             <Link
-              href="#layanan"
+              href="/layanan"
               className="text-gray-700 hover:text-[#11808b] transition-colors duration-300 font-medium"
             >
               Layanan
             </Link>
             <Link
-              href="#portfolio"
+              href="/portofolio"
               className="text-gray-700 hover:text-[#11808b] transition-colors duration-300 font-medium"
             >
               Portfolio
@@ -64,7 +64,7 @@ const Header = () => {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Link
-              href="#layanan"
+              href="/layanan"
               className="bg-[#11808b] text-white px-6 py-2 rounded-lg hover:bg-[#0f6b75] transition-colors duration-300 font-medium"
             >
               Pesan Sekarang
@@ -117,14 +117,14 @@ const Header = () => {
               Tentang
             </Link>
             <Link
-              href="#layanan"
+              href="/layanan"
               className="block text-gray-700 hover:text-[#11808b] transition-colors duration-300 font-medium"
               onClick={() => setIsMenuOpen(false)}
             >
               Layanan
             </Link>
             <Link
-              href="#portfolio"
+              href="/portofolio"
               className="block text-gray-700 hover:text-[#11808b] transition-colors duration-300 font-medium"
               onClick={() => setIsMenuOpen(false)}
             >
@@ -138,7 +138,7 @@ const Header = () => {
               Testimoni
             </Link>
             <Link
-              href="#layanan"
+              href="/layanan"
               className="block bg-[#11808b] text-white px-6 py-2 rounded-lg hover:bg-[#0f6b75] transition-colors duration-300 font-medium text-center"
               onClick={() => setIsMenuOpen(false)}
             >

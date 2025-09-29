@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import type { Metadata } from "next";
 import { Ubuntu } from "next/font/google";
 import "./globals.css";
+import AOSInit from "@/components/AOSInit";
 
 const ubuntu = Ubuntu({
   subsets: ["latin"],
@@ -74,6 +75,7 @@ export default function RootLayout({
   return (
     <html lang="id" className="scroll-smooth">
       <body className={`${ubuntu.className} antialiased bg-white text-gray-900`}>
+        <AOSInit />
         <Header />
         <main>{children}</main>
         <Footer />

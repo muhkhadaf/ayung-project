@@ -75,14 +75,14 @@ const Testimonials = () => {
     <section id="testimonials" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-sm font-semibold text-[#11808b] uppercase tracking-wide mb-2">
+        <div className="text-center mb-16" data-aos="fade-right" data-aos-delay="100">
+          <h2 className="text-sm font-semibold text-[#11808b] uppercase tracking-wide mb-2" data-aos="fade-right" data-aos-delay="200">
             Testimonials
           </h2>
-          <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+          <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6" data-aos="fade-right" data-aos-delay="300">
             Apa Kata Klien Kami
           </h3>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto" data-aos="fade-right" data-aos-delay="400">
             Kepuasan klien adalah prioritas utama kami. Lihat apa yang mereka katakan tentang 
             pengalaman bekerja sama dengan Ayung Project.
           </p>
@@ -91,7 +91,7 @@ const Testimonials = () => {
         {/* Stats */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {stats.map((stat, index) => (
-            <div key={index} className="text-center">
+            <div key={index} className="text-center" data-aos="zoom-out" data-aos-delay={500 + (index * 100)}>
               <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <div className="text-3xl sm:text-4xl font-bold text-[#11808b] mb-2">
                   {stat.number}
@@ -106,10 +106,12 @@ const Testimonials = () => {
 
         {/* Testimonials Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {testimonials.map((testimonial) => (
+          {testimonials.map((testimonial, index) => (
             <div
               key={testimonial.id}
               className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              data-aos="flip-left"
+              data-aos-delay={900 + (index * 100)}
             >
               {/* Rating */}
               <div className="flex items-center mb-4">
@@ -166,16 +168,16 @@ const Testimonials = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center">
+        <div className="text-center" data-aos="fade-up-left" data-aos-delay="1500">
           <div className="bg-white rounded-2xl p-8 shadow-lg">
-            <h4 className="text-2xl font-bold text-gray-900 mb-4">
+            <h4 className="text-2xl font-bold text-gray-900 mb-4" data-aos="fade-in" data-aos-delay="1600">
               Bergabunglah dengan Klien yang Puas
             </h4>
-            <p className="text-lg text-gray-600 mb-6">
+            <p className="text-lg text-gray-600 mb-6" data-aos="fade-in" data-aos-delay="1700">
               Ratusan klien telah mempercayakan proyek desain mereka kepada kami. 
               Saatnya giliran Anda merasakan pengalaman yang sama.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-in" data-aos-delay="1800">
               <a
                 href="https://wa.me/6281234567890?text=Halo%20Ayung%20Project%2C%20saya%20tertarik%20dengan%20layanan%20desain%20Anda"
                 target="_blank"

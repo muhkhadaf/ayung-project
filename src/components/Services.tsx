@@ -1,55 +1,114 @@
+'use client';
+
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
+interface Service {
+  id: string;
+  title: string;
+  description: string;
+  icon_path: string;
+  features: string[];
+  price: string;
+  category: string;
+  is_active: boolean;
+}
+
 const Services = () => {
-  const services = [
+  const [services, setServices] = useState<Service[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchServices = async () => {
+      try {
+        const response = await fetch('/api/services?limit=6&is_active=true');
+        if (response.ok) {
+          const data = await response.json();
+          setServices(data.services);
+        }
+      } catch (error) {
+        console.error('Error fetching services:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchServices();
+  }, []);
+
+  if (loading) {
+    return (
+      <section id="layanan" className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-center items-center h-64">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#11808b]"></div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  const staticServices = [
     {
       id: 'logo-design',
       title: 'Logo Design',
       description: 'Ciptakan identitas brand yang kuat dengan logo yang memorable dan profesional.',
-      iconPath: '/icons/logo.jpeg', // Menggunakan gambar yang sudah ada
+      icon_path: '/icons/logo.jpeg', // Menggunakan gambar yang sudah ada
       features: ['Konsep Original', 'File Vector', 'Revisi Unlimited', 'Brand Guidelines'],
-      price: 'Mulai dari Rp 500K'
+      price: 'Mulai dari Rp 500K',
+      category: 'Branding & Identity',
+      is_active: true
     },
     {
       id: 'branding',
       title: 'Branding Package',
       description: 'Paket lengkap branding untuk membangun identitas visual yang konsisten.',
-      iconPath: '/icons/compro.jpeg', // Menggunakan gambar yang sudah ada
+      icon_path: '/icons/compro.jpeg', // Menggunakan gambar yang sudah ada
       features: ['Logo + Variations', 'Business Card', 'Letterhead', 'Brand Guidelines'],
-      price: 'Mulai dari Rp 2.5Jt'
+      price: 'Mulai dari Rp 2.5Jt',
+      category: 'Branding & Identity',
+      is_active: true
     },
     {
       id: 'web-design',
       title: 'Web Design',
       description: 'Desain website yang menarik, responsif, dan user-friendly untuk bisnis Anda.',
-      iconPath: '/icons/web.jpeg', // Menggunakan gambar yang sudah ada
+      icon_path: '/icons/web.jpeg', // Menggunakan gambar yang sudah ada
       features: ['UI/UX Design', 'Responsive Layout', 'Prototype', 'Style Guide'],
-      price: 'Mulai dari Rp 3Jt'
+      price: 'Mulai dari Rp 3Jt',
+      category: 'Web Development',
+      is_active: true
     },
     {
       id: 'print-design',
       title: 'Print Design',
       description: 'Desain untuk media cetak seperti brosur, flyer, poster, dan materi promosi lainnya.',
-      iconPath: '/icons/brosur.jpeg', // Menggunakan gambar yang sudah ada
+      icon_path: '/icons/brosur.jpeg', // Menggunakan gambar yang sudah ada
       features: ['Print Ready', 'High Resolution', 'Multiple Formats', 'Color Variants'],
-      price: 'Mulai dari Rp 300K'
+      price: 'Mulai dari Rp 300K',
+      category: 'Print Design',
+      is_active: true
     },
     {
       id: 'social-media',
       title: 'Social Media Design',
       description: 'Konten visual menarik untuk meningkatkan engagement di media sosial Anda.',
-      iconPath: '/icons/feed.jpeg', // Menggunakan gambar yang sudah ada
+      icon_path: '/icons/feed.jpeg', // Menggunakan gambar yang sudah ada
       features: ['Post Templates', 'Story Design', 'Cover Design', 'Content Calendar'],
-      price: 'Mulai dari Rp 200K'
+      price: 'Mulai dari Rp 200K',
+      category: 'Digital Marketing',
+      is_active: true
     },
     {
       id: 'packaging',
       title: 'Packaging Design',
       description: 'Desain kemasan produk yang eye-catching dan meningkatkan daya tarik produk.',
-      iconPath: '/icons/banner.jpeg', // Menggunakan gambar yang sudah ada
+      icon_path: '/icons/banner.jpeg', // Menggunakan gambar yang sudah ada
       features: ['3D Mockup', 'Die-cut Template', 'Print Specification', 'Multiple Variants'],
-      price: 'Mulai dari Rp 800K'
+      price: 'Mulai dari Rp 800K',
+      category: 'Print Design',
+      is_active: true
     }
   ];
 
@@ -57,14 +116,14 @@ const Services = () => {
     <section id="layanan" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-sm font-semibold text-[#11808b] uppercase tracking-wide mb-2">
+        <div className="text-center mb-16" data-aos="fade-up" data-aos-delay="100">
+          <h2 className="text-sm font-semibold text-[#11808b] uppercase tracking-wide mb-2" data-aos="fade-up" data-aos-delay="200">
             Layanan Kami
           </h2>
-          <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+          <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6" data-aos="fade-up" data-aos-delay="300">
             Solusi Desain Grafis Terlengkap
           </h3>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="400">
             Dari konsep hingga eksekusi, kami menyediakan berbagai layanan desain grafis 
             yang disesuaikan dengan kebutuhan bisnis Anda.
           </p>
@@ -72,16 +131,18 @@ const Services = () => {
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-16">
-          {services.map((service) => (
+          {(services && services.length > 0 ? services : staticServices).map((service, index) => (
             <div
               key={service.id}
               className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
+              data-aos="flip-up"
+              data-aos-delay={500 + (index * 100)}
             >
               <div className="flex flex-col sm:flex-row">
                 {/* Image Section */}
                 <div className="sm:w-1/2 bg-gradient-to-br from-[#11808b] to-[#0f6b75] p-0 relative overflow-hidden min-h-[250px]">
                   <Image
-                     src={service.iconPath}
+                     src={service.icon_path || '/icons/logo.jpeg'}
                      alt={`${service.title} icon`}
                      width={400}
                      height={250}
@@ -146,7 +207,7 @@ const Services = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center">
+        <div className="text-center" data-aos="zoom-in" data-aos-delay="1200">
           <div className="bg-white rounded-2xl shadow-lg p-8 max-w-2xl mx-auto">
             <h4 className="text-2xl font-bold text-gray-900 mb-4">
               Butuh Layanan Khusus?
